@@ -195,7 +195,8 @@ doc_author_string = function (m, i) {
     var doc = m.meta(i),
         lead, lead_trail,
         result;
-
+        result = doc.authors[0].replace(/;/g, ",")
+/*
     if(doc.authors.length > 0) {
         lead = doc.authors[0].replace(/,/g, "").split(" ");
         // check for Jr., Sr., 2nd, etc.
@@ -219,7 +220,7 @@ doc_author_string = function (m, i) {
                 result += ", " + doc.authors.slice(1, 3).join(", ");
                 result += "et al.";
             } else {*/
-            if (doc.authors.length > 2) {
+/*            if (doc.authors.length > 2) {
                 result += ", ";
                 result += doc.authors
                     .slice(1, doc.authors.length - 1)
@@ -230,7 +231,7 @@ doc_author_string = function (m, i) {
     } else {
         result = "[Anon]";
     }
-
+*/
     return result;
 };
 
